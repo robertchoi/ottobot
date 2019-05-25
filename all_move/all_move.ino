@@ -91,6 +91,7 @@ void loop() {
        string = bleSerial.readStringUntil('\n');
        string.getBytes(cmdBuffer, 7);
 
+       // 0xFF 0xF0 0x01 0x01 0xFF 
        sprintf(s, "%02x,%02x,%02x,%02x,%02x", cmdBuffer[0], cmdBuffer[1], cmdBuffer[2],cmdBuffer[3],cmdBuffer[4]);
        Serial.println(s);
 
